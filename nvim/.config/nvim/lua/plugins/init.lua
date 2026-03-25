@@ -1,28 +1,37 @@
 return {
   {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
-  },
-
-  -- These are some examples, uncomment them if you want to see them work!
-  {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
     end,
   },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "lua", "python", "c", "cpp", "rust", "typst",
+        "javascript", "typescript", "toml", "yaml", "json",
+        "markdown", "fish", "bash", "html", "css",
+      },
+    },
+  },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        python = { "black" },
+        lua = { "stylua" },
+        rust = { "rustfmt" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+      },
+    },
+  },
+
+  {
+    "kaarmu/typst.vim",
+    ft = "typst",
+  },
 }
