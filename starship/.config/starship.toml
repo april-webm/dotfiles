@@ -1,0 +1,57 @@
+# Starship Prompt Configuration
+add_newline = true
+# Format string
+format = """
+[┌─](bold blue)$directory$git_branch$git_status$nodejs$python$rust$golang
+[└─](bold blue)$character"""
+# Timeout for commands (milliseconds)
+command_timeout = 1000
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "[$path]($style) "
+style = "bold cyan"
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = " "
+style = "bold purple"
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold yellow"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?${count}"
+stashed = "$${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+[nodejs]
+format = "via [$symbol($version )]($style)"
+symbol = " "
+style = "bold green"
+[python]
+format = "via [$symbol$pyenv_prefix($version )]($style)"
+symbol = " "
+style = "bold yellow"
+[rust]
+format = "via [$symbol($version )]($style)"
+symbol = " "
+style = "bold red"
+[golang]
+format = "via [$symbol($version )]($style)"
+symbol = " "
+style = "bold cyan"
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold yellow"
+[package]
+disabled = true
