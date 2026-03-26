@@ -8,7 +8,7 @@ starship init fish | source
 
 # Fetch on interactive session
 if status is-interactive
-    fastfetch  # hyfetch if you prefer, install either
+    hyfetch
 end
 
 # ===================================
@@ -22,7 +22,7 @@ test -d /opt/homebrew/bin; and fish_add_path /opt/homebrew/bin
 # ===================================
 # Aliases
 # ===================================
-alias ls="eza --icons"    # modern ls replacement
+alias ls="eza --icons"    
 alias ll="eza -lah --icons"
 alias la="eza -A --icons"
 alias l="eza --icons"
@@ -50,20 +50,17 @@ set -gx VISUAL nvim
 # ===================================
 # Fish colors
 # ===================================
-set fish_color_normal normal
-set fish_color_command blue
-set fish_color_quote green
-set fish_color_redirection cyan
-set fish_color_end magenta
-set fish_color_error red
-set fish_color_param normal
-set fish_color_comment brblack
-set fish_color_match cyan
-set fish_color_selection white --bold --background=brblack
-set fish_color_search_match bryellow --background=brblack
-set fish_color_operator cyan
-set fish_color_escape brcyan
-set fish_color_autosuggestion brblack
+set fish_color_normal brwhite
+set fish_color_command '#7b8dff'
+set fish_color_quote '#4caf60'
+set fish_color_redirection '#5bacbd'
+set fish_color_end '#d946a8'
+set fish_color_error '#c93040'
+set fish_color_param '#d4c8e8'
+set fish_color_operator '#5bacbd'
+set fish_color_escape '#80d4e8'
+set fish_color_comment '#6b5a8e'
+set fish_color_autosuggestion '#6b5a8e'
 
 # ===================================
 # Custom Functions
@@ -98,5 +95,4 @@ function extract
     end
 end
 
-# Opam (if installed)
 test -r "$HOME/.opam/opam-init/init.fish"; and source "$HOME/.opam/opam-init/init.fish" > /dev/null 2>/dev/null
