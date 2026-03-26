@@ -30,8 +30,18 @@ return {
     },
   },
 
-  {
-    "kaarmu/typst.vim",
-    ft = "typst",
-  },
+{
+  "kaarmu/typst.vim",
+  ft = "typst",
+  init = function()
+    vim.g.typst_conceal_math = 1
+    vim.g.typst_conceal_emoji = 1
+  end,
+},
+{
+  "chomosuke/typst-preview.nvim",
+  ft = "typst",
+  build = function() require("typst-preview").update() end,
+  opts = {},
+},
 }
