@@ -2,28 +2,28 @@ add_newline = true
 command_timeout = 1000
 
 format = """
-[┌─](bold #ae3c80)$directory$git_branch$git_status$nodejs$python$rust$golang$typst
-[└─](bold #ae3c80)$character"""
+[┌─](bold #b16286)$directory$git_branch$git_status$nodejs$python$rust$golang$typst
+[└─](bold #b16286)$character"""
 
 [character]
-success_symbol = "[❯](#d946a8)"
-error_symbol = "[❯](#c93040)"
-vimcmd_symbol = "[❮](#4caf60)"
+success_symbol = "[❯](#d79921)"
+error_symbol = "[❯](#cc241d)"
+vimcmd_symbol = "[❮](#98971a)"
 
 [directory]
 truncation_length = 3
 truncate_to_repo = true
 format = "[$path]($style) "
-style = "bold #7b8dff"
+style = "bold #458588"
 
 [git_branch]
 format = "on [$symbol$branch]($style) "
 symbol = " "
-style = "bold #d946a8"
+style = "bold #b16286"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bold #e0b040"
+style = "bold #d79921"
 conflicted = "🏳"
 ahead = "⇡${count}"
 behind = "⇣${count}"
@@ -39,32 +39,32 @@ deleted = "✘${count}"
 [nodejs]
 format = "via [$symbol($version )]($style)"
 symbol = " "
-style = "bold #4caf60"
+style = "bold #98971a"
 
 [python]
 format = "via [$symbol$pyenv_prefix($version )]($style)"
 symbol = " "
-style = "bold #e0b040"
+style = "bold #d79921"
 
 [rust]
 format = "via [$symbol($version )]($style)"
 symbol = " "
-style = "bold #c93040"
+style = "bold #cc241d"
 
 [golang]
 format = "via [$symbol($version )]($style)"
 symbol = " "
-style = "bold #5bacbd"
+style = "bold #689d6a"
 
 [typst]
 format = "via [$symbol($version )]($style)"
 symbol = "t "
-style = "bold #7b8dff"
+style = "bold #458588"
 
 [cmd_duration]
 min_time = 500
 format = "took [$duration]($style) "
-style = "bold #e0b040"
+style = "bold #d79921"
 
 [package]
 disabled = true

@@ -51,16 +51,16 @@ set -gx VISUAL nvim
 # Fish colors
 # ===================================
 set fish_color_normal brwhite
-set fish_color_command '#7b8dff'
-set fish_color_quote '#4caf60'
-set fish_color_redirection '#5bacbd'
-set fish_color_end '#d946a8'
-set fish_color_error '#c93040'
-set fish_color_param '#d4c8e8'
-set fish_color_operator '#5bacbd'
-set fish_color_escape '#80d4e8'
-set fish_color_comment '#6b5a8e'
-set fish_color_autosuggestion '#6b5a8e'
+set fish_color_command '#458588'
+set fish_color_quote '#98971a'
+set fish_color_redirection '#689d6a'
+set fish_color_end '#b16286'
+set fish_color_error '#cc241d'
+set fish_color_param '#ebdbb2'
+set fish_color_operator '#689d6a'
+set fish_color_escape '#8ec07c'
+set fish_color_comment '#928374'
+set fish_color_autosuggestion '#928374'
 
 # ===================================
 # Custom Functions

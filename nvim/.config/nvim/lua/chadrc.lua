@@ -7,7 +7,7 @@ local M = {}
 
 
 M.base46 = {
-  theme = "darkworld",
+  theme = "gruvbox",
   transparency = true,
 }
 
