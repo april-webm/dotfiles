@@ -3,12 +3,12 @@
 # Disable greeting
 set fish_greeting
 
-# Initialize Starship prompt
-starship init fish | source
+# Initialize Oh My Posh prompt
+oh-my-posh init fish --config ~/.config/ohmyposh/zen.toml | source
 
 # Fetch on interactive session
 if status is-interactive
-    hyfetch
+    fastfetch
 end
 
 # ===================================
