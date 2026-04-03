@@ -67,4 +67,13 @@ return {
   build = function() require("typst-preview").update() end,
   opts = {},
 },
+{
+  "ajbucci/ipynb.nvim",
+  ft = "ipynb",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "neovim/nvim-lspconfig",
+  },
+  opts = {},
+},
 }
