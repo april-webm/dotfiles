@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require "configs.lspconfig"
     end,
@@ -34,8 +35,29 @@ return {
   "kaarmu/typst.vim",
   ft = "typst",
   init = function()
-    vim.g.typst_conceal_math = 1
+    vim.g.typst_conceal_math = 0
     vim.g.typst_conceal_emoji = 1
+  end,
+},
+{
+  "pxwg/math-conceal.nvim",
+  ft = { "plaintex", "tex", "context", "bibtex", "markdown", "typst" },
+  main = "math-conceal",
+  opts = {
+    conceal = {
+      "greek",
+      "script",
+      "math",
+      "font",
+      "delim",
+      "phy",
+    },
+    ft = { "plaintex", "tex", "context", "bibtex", "markdown", "typst" },
+  },
+  config = function(_, opts)
+    local math_conceal = require("math-conceal")
+    math_conceal.setup(opts)
+    math_conceal.set()
   end,
 },
 {
