@@ -56,8 +56,15 @@ return {
   },
   config = function(_, opts)
     local math_conceal = require("math-conceal")
+    local function reveal_cursor_line()
+      vim.opt_local.concealcursor = ""
+    end
+
     math_conceal.setup(opts)
     math_conceal.set()
+    reveal_cursor_line()
+    vim.schedule(reveal_cursor_line)
+    vim.defer_fn(reveal_cursor_line, 100)
   end,
 },
 {
