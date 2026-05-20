@@ -5,5 +5,7 @@
 # -----------------------------------------------------
 # Prompt
 # -----------------------------------------------------
-eval "$($HOME/.local/bin/oh-my-posh init fish --config $HOME/.config/ohmyposh/zen.toml)"
-# eval "$($HOME/.local/bin/oh-my-posh init fish --config $HOME/.config/ohmyposh/EDM115-newline.omp.json)"
+if command -q oh-my-posh
+    oh-my-posh init fish --config $HOME/.config/ohmyposh/zen.toml | source
+    # oh-my-posh init fish --config $HOME/.config/ohmyposh/EDM115-newline.omp.json | source
+end

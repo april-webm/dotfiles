@@ -89,7 +89,7 @@ same_target() {
   local a="$1"
   local b="$2"
   [[ -e "$a" || -L "$a" ]] || return 1
-  [[ "$(realpath -m "$a")" == "$(realpath -m "$b")" ]]
+  [[ "$a" -ef "$b" ]]
 }
 
 backup_path() {

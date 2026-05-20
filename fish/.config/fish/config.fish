@@ -7,7 +7,7 @@ function _lc
 		command $argv
 		return
 	end
-	'/home/april/.cargo/bin/lean-ctx' -c $argv
+	command lean-ctx -c $argv
 	set -l _lc_rc $status
 	if test $_lc_rc -eq 127 -o $_lc_rc -eq 126
 		command $argv
@@ -51,7 +51,7 @@ end
 
 if not set -q LEAN_CTX_ACTIVE; and not set -q LEAN_CTX_DISABLED; and test (set -q LEAN_CTX_ENABLED; and echo $LEAN_CTX_ENABLED; or echo 1) != '0'
 	if command -q lean-ctx
-		lean-ctx-on
+		lean-ctx-on >/dev/null
 	end
 end
 # lean-ctx shell hook — end
