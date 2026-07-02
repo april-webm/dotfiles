@@ -55,3 +55,4 @@ if not set -q LEAN_CTX_ACTIVE; and not set -q LEAN_CTX_DISABLED; and test (set -
 	end
 end
 # lean-ctx shell hook — end
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
